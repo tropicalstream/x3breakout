@@ -2,6 +2,8 @@
 
 ## 2026-07-04
 
+- Replaced the life-lost line with "Reenergizing for the people." and regenerated its Fish voice clip.
+- Replaced the miss-ball sound with a rising energy-generation cue.
 - Fixed MCP story voice playback so forced campaign beats always speak, even if optional commentary was previously toggled off in saved settings.
 - Restored music ducking during voice lines so generated MCP dialogue cuts through the title and level tracks.
 - Verified `commentary.json` has 68 unique dialogue IDs and all 68 generated MP3 clips are packaged in `app/src/main/assets/voice/`.

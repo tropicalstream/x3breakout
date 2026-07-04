@@ -985,7 +985,7 @@ class Game(
         renderHud()
 
         // level intro title card, big and readable, fades out
-        if (levelIntro > 0f && state == State.PLAY) {
+        if (!settingsOpen && levelIntro > 0f && state == State.PLAY) {
             val bt = Campaign.beat(level)
             val a = (levelIntro / 0.6f).coerceIn(0f, 1f)
             val t = cyc(0)
@@ -993,7 +993,7 @@ class Game(
             drawFit(bt.title, 0f, -0.012f, 0.0028f, 0.235f, 1f, 1f, 1f, a)
         }
 
-        if (state == State.LEVEL_CLEAR) {
+        if (!settingsOpen && state == State.LEVEL_CLEAR) {
             val t = cyc(0)
             drawFit(Campaign.beat(level).clear, 0f, 0.0f, 0.0022f, 0.24f, t[0], t[1], t[2], 1f)
         }

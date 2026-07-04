@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0 - 2026-07-04
+
+- Finalized the MCP campaign build as X3 Breakout 2.0.
+- Changed the Z power-up from a brick-clearing Superzapper into REENERGIZE, a one-life restoration reward.
+- Added new REENERGIZE dialogue: "Energy routed back to the people. One life restored."
+- Set dialogue captions off by default, while preserving the settings toggle.
+- Fixed asset cache refresh after `adb install -r` so regenerated voice clips replace older cached clips on device.
+- Regenerated the life-lost line as "Reenergizing for the people." and kept the energy-generation miss sound.
+
 ## 2026-07-04
 
 - Replaced the life-lost line with "Reenergizing for the people." and regenerated its Fish voice clip.

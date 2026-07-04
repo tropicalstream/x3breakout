@@ -6,6 +6,15 @@ import android.content.Context
 class Settings(ctx: Context) {
     private val prefs = ctx.getSharedPreferences("x3breakout", Context.MODE_PRIVATE)
 
+    init {
+        if (!prefs.getBoolean("captionsDefaultOffV1", false)) {
+            prefs.edit()
+                .putBoolean("captions", false)
+                .putBoolean("captionsDefaultOffV1", true)
+                .apply()
+        }
+    }
+
     /** Swipe sensitivity index 0..3 (multiplier on calibrated stroke). */
     var swipeSens: Int
         get() = prefs.getInt("swipeSens", 1)
@@ -20,7 +29,7 @@ class Settings(ctx: Context) {
 
     /** Story captions / MCP taunt text on the HUD. */
     var captions: Boolean
-        get() = prefs.getBoolean("captions", true)
+        get() = prefs.getBoolean("captions", false)
         set(v) { prefs.edit().putBoolean("captions", v).apply() }
 
     /** 0=SMALL 1=MEDIUM 2=LARGE — scales the whole game window. */

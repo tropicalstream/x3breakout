@@ -46,6 +46,7 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
     private var currentLevelTrack = -1
     private var lastMusicLevel = 1        // to restart when vol leaves 0
     private var powerupWanted = false     // powerup phase active right now
+    private var duckFactor = 1f
 
     // ---- commentary: one-shot only --------------------------------------
     private class Line(val id: String, val event: String, val quote: String)
@@ -196,8 +197,14 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
     }
 
     private fun applyMusicVol(mp: MediaPlayer) {
-        val v = settings.musicVol / 10f
+        val v = settings.musicVol / 10f * duckFactor
         try { mp.setVolume(v, v) } catch (_: Throwable) {}
+    }
+
+    private fun duckMusic(on: Boolean) {
+        duckFactor = if (on) 0.18f else 1f
+        levelPlayer?.let { applyMusicVol(it) }
+        powerupPlayer?.let { applyMusicVol(it) }
     }
 
     // ---- Commentary: one-shot voice ---------------------------------------
@@ -224,6 +231,7 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
             val f = cacheAsset("voice/${line.id}.mp3")
             voicePlayer?.release()   // interrupt a still-playing line
             voicePlayer = null
+            duckMusic(true)
             val mp = MediaPlayer()
             mp.setAudioAttributes(
                 AudioAttributes.Builder()
@@ -237,13 +245,19 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
             mp.setOnCompletionListener { done ->
                 exec.execute {
                     done.release()
-                    if (voicePlayer == done) voicePlayer = null
+                    if (voicePlayer == done) {
+                        voicePlayer = null
+                        duckMusic(false)
+                    }
                 }
             }
             mp.setOnErrorListener { done, _, _ ->
                 exec.execute {
                     try { done.release() } catch (_: Throwable) {}
-                    if (voicePlayer == done) voicePlayer = null
+                    if (voicePlayer == done) {
+                        voicePlayer = null
+                        duckMusic(false)
+                    }
                 }
                 true
             }
@@ -251,6 +265,7 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
             voicePlayer = mp
             Log.i(TAG, "voice ${line.id} one-shot (${f.length()} bytes)")
         } catch (t: Throwable) {
+            duckMusic(false)
             Log.i(TAG, "voice clip MISSING for ${line.id} — run tools/generate_commentary.py and rebuild: $t")
         }
     }
@@ -261,6 +276,7 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
         exec.execute {
             try { voicePlayer?.release() } catch (_: Throwable) {}
             voicePlayer = null
+            duckMusic(false)
             pauseLevelMusic()
             try { powerupPlayer?.pause() } catch (_: Throwable) {}
         }

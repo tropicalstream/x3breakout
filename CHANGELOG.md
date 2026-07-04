@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1 - 2026-07-04
+
+- MCP now interacts with ball: touching the MCP core warps the ball trajectory, triggers MCP visual feedback, and plays a generated MCP laugh.
+
 ## 2.0 - 2026-07-04
 
 - Finalized the MCP campaign build as X3 Breakout 2.0.

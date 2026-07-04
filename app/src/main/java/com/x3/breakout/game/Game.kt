@@ -58,6 +58,7 @@ class Game(
         const val PADDLE_H = 0.0045f    // paddle extrusion height
         const val FLOAT_H = 0.005f      // ball / particle hover height
         const val UI_H = 0.011f         // HUD & caption layer height
+        const val MCP_WARP_R = 0.014f
     }
 
     enum class State { ATTRACT, PLAY, LEVEL_CLEAR, FINALE, GAME_OVER }
@@ -73,6 +74,7 @@ class Game(
     private var retortHi = false     // MCP barks at 75%...
     private var retortLo = false     // ...and 25% grid remaining
     private var hitFlash = 0f        // MCP recoil on brick destruction
+    private var mcpWarpCooldown = 0f  // prevents repeated laugh spam inside the core
     private var totalBricks = 1
     private var aliveCount = 0
 
@@ -534,6 +536,7 @@ class Game(
 
         updateParticles(dt)
         if (hitFlash > 0f) hitFlash -= dt
+        if (mcpWarpCooldown > 0f) mcpWarpCooldown -= dt
 
         // MCP reacts as its grid breaks: retort at 75%, taunt at 50%,
         // desperate retort at 25% remaining.
@@ -642,6 +645,9 @@ class Game(
             b.y = HH - BALL_R; b.vy = -abs(b.vy); audio.sfx("wall"); hit = true
             sparks(b.x, b.y, Levels.palette[3], 3, 0.05f, rainbow = true)
         }
+        // MCP core: touching the monopoly intelligence bends the ball's
+        // path like a malicious little gravity well, then laughs.
+        if (warpFromMcp(b)) hit = true
         // paddle
         if (b.vy < 0f && b.y - BALL_R < PADDLE_Y + 0.004f && b.y > PADDLE_Y - 0.006f &&
             abs(b.x - paddleX) < paddleHalf + BALL_R) {
@@ -673,6 +679,34 @@ class Game(
             break
         }
         return hit
+    }
+
+    private fun warpFromMcp(b: Ball): Boolean {
+        val dx = b.x
+        val dy = b.y - AREA_CY
+        val d2 = dx * dx + dy * dy
+        val r = MCP_WARP_R + BALL_R
+        if (d2 > r * r) return false
+        val d = sqrt(d2).coerceAtLeast(0.0001f)
+        val nx = dx / d
+        val ny = dy / d
+        val sp = sqrt(b.vx * b.vx + b.vy * b.vy).coerceAtLeast(baseSpeed())
+        val swirl = if (((level + aliveCount) and 1) == 0) 1f else -1f
+        val tx = -ny * swirl
+        val ty = nx * swirl
+        val blend = 0.72f
+        b.vx = (tx * blend + nx * (1f - blend)) * sp
+        b.vy = (ty * blend + ny * (1f - blend)) * sp
+        b.x = nx * r
+        b.y = AREA_CY + ny * r
+        hitFlash = 1f
+        ringFx(0f, AREA_CY, Levels.palette[5], 0.012f)
+        sparks(b.x, b.y, Levels.palette[5], 12, 0.11f, rainbow = true)
+        if (mcpWarpCooldown <= 0f) {
+            mcpWarpCooldown = 1.7f
+            audio.say("mcp_laugh", force = true)
+        }
+        return true
     }
 
     private fun pointInBrick(x: Float, y: Float, br: Levels.Brick): Boolean {

@@ -563,6 +563,14 @@
       "voice_model_id": "",
       "quote": "Unauthorized joy detected.",
       "reason": "MCP retort as bricks fall (75%/25% grid thresholds). MCP cannot process fun. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_laugh_1",
+      "event": "mcp_laugh",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Ha ha ha ha ha!",
+      "reason": "Ball touches the MCP core: villain laugh as the core warps the ball trajectory away."
     }
   ]
 }

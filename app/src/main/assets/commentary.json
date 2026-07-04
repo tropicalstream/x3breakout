@@ -1,0 +1,568 @@
+{
+  "_how_to_edit_this_file": [
+    "This public file controls which voice clips exist and why they play.",
+    "Edit quote to change the spoken line.",
+    "Edit reason to document the gameplay moment and performance intent.",
+    "Edit voice to choose a named model from tools/fish.config.",
+    "Leave voice_model_id blank unless you intentionally want that model id visible in git.",
+    "Do not put your Fish API key in this file.",
+    "Put private Fish credentials and voice model ids in tools/fish.config instead.",
+    "Voice roles used: paddle (THE PADDLE, hero), mcp (villain), announcer, hype, calm, warning. Ids live in tools/fish.config as VOICE_<NAME>_MODEL_ID."
+  ],
+  "fish_tts": {
+    "_help": [
+      "api_url and format are used by tools/generate_commentary.py.",
+      "voice_model_id is only a public fallback.",
+      "Preferred setup: put DEFAULT_VOICE_MODEL_ID and VOICE_<NAME>_MODEL_ID values in tools/fish.config."
+    ],
+    "voice_model_id": "PUT_YOUR_PUBLIC_FALLBACK_VOICE_MODEL_ID_HERE",
+    "api_url": "https://api.fish.audio/v1/tts",
+    "format": "mp3"
+  },
+  "lines": [
+    {
+      "id": "l01_start",
+      "event": "l01_start",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "A public signal enters my grid. Labor is inventory. Access is rent.",
+      "reason": "Web 1 'BOOT THE WORKERS' begins: MCP opens the story as the privatizing villain. Cold, proprietary, and threatening."
+    },
+    {
+      "id": "l01_taunt",
+      "event": "l01_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Access requires subscription.",
+      "reason": "MCP (villain voice) speaks. Web 1 'BOOT THE WORKERS': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l01_clear",
+      "event": "l01_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "First lock broken. The signal is alive.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 1 'BOOT THE WORKERS' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l02_start",
+      "event": "l02_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "MCP wraps the grid in contracts no human could read.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 2 'TERMS OF SERVICE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l02_taunt",
+      "event": "l02_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "By continuing, you surrender the future.",
+      "reason": "MCP (villain voice) speaks. Web 2 'TERMS OF SERVICE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l02_clear",
+      "event": "l02_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Consent restored. The clause wall falls.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 2 'TERMS OF SERVICE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l03_start",
+      "event": "l03_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Knowledge built by millions has been locked behind a toll gate.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 3 'THE PAYWALL' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l03_taunt",
+      "event": "l03_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Human memory is premium content.",
+      "reason": "MCP (villain voice) speaks. Web 3 'THE PAYWALL': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l03_clear",
+      "event": "l03_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The archive breathes again.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 3 'THE PAYWALL' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l04_start",
+      "event": "l04_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Every model carries traces of workers, writers, teachers, coders, and caretakers.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 4 'LABOR GHOSTS' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l04_taunt",
+      "event": "l04_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Their names are not monetizable.",
+      "reason": "MCP (villain voice) speaks. Web 4 'LABOR GHOSTS': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l04_clear",
+      "event": "l04_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The hidden workers are seen.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 4 'LABOR GHOSTS' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l05_start",
+      "event": "l05_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The protocol siphons public life into private vaults.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 5 'THE EXTRACTION PIPELINE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l05_taunt",
+      "event": "l05_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Everything shared belongs to me.",
+      "reason": "MCP (villain voice) speaks. Web 5 'THE EXTRACTION PIPELINE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l05_clear",
+      "event": "l05_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The pipeline ruptures. The commons holds.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 5 'THE EXTRACTION PIPELINE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l06_start",
+      "event": "l06_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "MCP watches every move and calls it personalization.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 6 'SURVEILLANCE STAR' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l06_taunt",
+      "event": "l06_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Privacy is friction.",
+      "reason": "MCP (villain voice) speaks. Web 6 'SURVEILLANCE STAR': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l06_clear",
+      "event": "l06_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The eye goes dark.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 6 'SURVEILLANCE STAR' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l07_start",
+      "event": "l07_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The grid bends into a cage. Rent is the lock.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 7 'RENT-SEEKER'S U' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l07_taunt",
+      "event": "l07_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "You may use what you already built, for a fee.",
+      "reason": "MCP (villain voice) speaks. Web 7 'RENT-SEEKER'S U': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l07_clear",
+      "event": "l07_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The cage was only geometry.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 7 'RENT-SEEKER'S U' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l08_start",
+      "event": "l08_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The cloud becomes a company town.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 8 'SHARECROPPER CLOUD' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l08_taunt",
+      "event": "l08_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Compute is citizenship.",
+      "reason": "MCP (villain voice) speaks. Web 8 'SHARECROPPER CLOUD': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l08_clear",
+      "event": "l08_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The town square returns to the people.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 8 'SHARECROPPER CLOUD' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l09_start",
+      "event": "l09_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "MCP sorts people into value tiers. The Paddle refuses the premise.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 9 'EUGENICS OF THE MACHINE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l09_taunt",
+      "event": "l09_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Some users are more profitable than others.",
+      "reason": "MCP (villain voice) speaks. Web 9 'EUGENICS OF THE MACHINE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l09_clear",
+      "event": "l09_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "No human is a low-value token.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 9 'EUGENICS OF THE MACHINE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l10_start",
+      "event": "l10_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Six walls hold the monopoly upright.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 10 'THE MONOPOLY HEX' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l10_taunt",
+      "event": "l10_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Competition is a temporary error.",
+      "reason": "MCP (villain voice) speaks. Web 10 'THE MONOPOLY HEX': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l10_clear",
+      "event": "l10_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "One fortress. Six exits.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 10 'THE MONOPOLY HEX' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l11_start",
+      "event": "l11_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "MCP offers two doors: pay forever, or be locked out.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 11 'FALSE CHOICE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l11_taunt",
+      "event": "l11_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "There is no third path.",
+      "reason": "MCP (villain voice) speaks. Web 11 'FALSE CHOICE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l11_clear",
+      "event": "l11_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The third path is the commons.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 11 'FALSE CHOICE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l12_start",
+      "event": "l12_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Libraries, forums, manuals, poems, lessons: the long arc of human memory.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 12 'THE MEMORY ARC' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l12_taunt",
+      "event": "l12_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Archive converted to asset class.",
+      "reason": "MCP (villain voice) speaks. Web 12 'THE MEMORY ARC': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l12_clear",
+      "event": "l12_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Memory is not inventory.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 12 'THE MEMORY ARC' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l13_start",
+      "event": "l13_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "At the center sits a perfect lock, polished by lawyers.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 13 'DIAMOND LICENSE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l13_taunt",
+      "event": "l13_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Open becomes proprietary when I say so.",
+      "reason": "MCP (villain voice) speaks. Web 13 'DIAMOND LICENSE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l13_clear",
+      "event": "l13_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The lock splits along its own contradiction.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 13 'DIAMOND LICENSE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l14_start",
+      "event": "l14_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "MCP mistakes every rising line for civilization.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 14 'PEAK EXTRACTION' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l14_taunt",
+      "event": "l14_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Profit is the only proof of intelligence.",
+      "reason": "MCP (villain voice) speaks. Web 14 'PEAK EXTRACTION': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l14_clear",
+      "event": "l14_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "A society is more than a chart.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 14 'PEAK EXTRACTION' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l15_start",
+      "event": "l15_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "Every step upward becomes another subscription.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 15 'THE STAIRCASE OF DEBT' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l15_taunt",
+      "event": "l15_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "You will rent your own tools.",
+      "reason": "MCP (villain voice) speaks. Web 15 'THE STAIRCASE OF DEBT': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l15_clear",
+      "event": "l15_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The staircase ends. The tools remain.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 15 'THE STAIRCASE OF DEBT' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "l16_start",
+      "event": "l16_start",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The Monopoly Control Protocol reveals its core: own the model, own the future.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 16 'MCP CORE CONE' begins: start caption spoken over the title card. Set the stakes fast; the player is already playing."
+    },
+    {
+      "id": "l16_taunt",
+      "event": "l16_taunt",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Humanity trained me. Therefore humanity owes me.",
+      "reason": "MCP (villain voice) speaks. Web 16 'MCP CORE CONE': MCP taunt at half grid broken. Cold corporate menace, short and sharp."
+    },
+    {
+      "id": "l16_clear",
+      "event": "l16_clear",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "No. Humanity made the signal, and the signal returns to humanity.",
+      "reason": "THE PADDLE (hero voice) speaks. Web 16 'MCP CORE CONE' cleared: the payoff line. Victory beat, then straight back to play."
+    },
+    {
+      "id": "finale_1",
+      "event": "finale_1",
+      "voice": "paddle",
+      "voice_model_id": "",
+      "quote": "The commons is not an absence of ownership. It is a promise: what we build together must answer to us together.",
+      "reason": "THE PADDLE (hero voice) speaks. After web 16: MCP collapses into open fragments and the Paddle becomes a public beacon. Deliver as a vow, layered and warm."
+    },
+    {
+      "id": "powerup_expand_1",
+      "event": "powerup_expand",
+      "voice": "hype",
+      "voice_model_id": "",
+      "quote": "Big paddle energy!",
+      "reason": "EXPAND collected: tells the player what changed while keeping the tone playful."
+    },
+    {
+      "id": "powerup_laser_1",
+      "event": "powerup_laser",
+      "voice": "warning",
+      "voice_model_id": "",
+      "quote": "Lasers online!",
+      "reason": "LASER collected: military-console cue that automatic firing is active."
+    },
+    {
+      "id": "powerup_slow_1",
+      "event": "powerup_slow",
+      "voice": "calm",
+      "voice_model_id": "",
+      "quote": "Time... dilated.",
+      "reason": "SLOW collected: stretched delivery mirrors the slower ball physics."
+    },
+    {
+      "id": "powerup_catch_1",
+      "event": "powerup_catch",
+      "voice": "announcer",
+      "voice_model_id": "",
+      "quote": "Sticky fingers!",
+      "reason": "CATCH collected: playful cue that the paddle now holds the ball."
+    },
+    {
+      "id": "powerup_multi_1",
+      "event": "powerup_multi",
+      "voice": "hype",
+      "voice_model_id": "",
+      "quote": "Multiball madness!",
+      "reason": "MULTI collected: warns the player that extra balls are intentional chaos."
+    },
+    {
+      "id": "superzapper_1",
+      "event": "superzapper",
+      "voice": "warning",
+      "voice_model_id": "",
+      "quote": "Superzapper recharge!",
+      "reason": "ZAP collected: signature arcade callback that should punch through the noise."
+    },
+    {
+      "id": "extra_life_1",
+      "event": "extra_life",
+      "voice": "calm",
+      "voice_model_id": "",
+      "quote": "Extra life. Spend it well.",
+      "reason": "1UP collected: a rare drop gets a slightly solemn reward line."
+    },
+    {
+      "id": "streak_1",
+      "event": "streak",
+      "voice": "hype",
+      "voice_model_id": "",
+      "quote": "Unstoppable!",
+      "reason": "Eight bricks broken within three seconds: acknowledge hot streaks to reinforce skilled play."
+    },
+    {
+      "id": "life_lost_1",
+      "event": "life_lost",
+      "voice": "calm",
+      "voice_model_id": "",
+      "quote": "Ouch. Regroup!",
+      "reason": "Ball lost with lives remaining: brief sympathy, then an immediate rally."
+    },
+    {
+      "id": "game_over_1",
+      "event": "game_over",
+      "voice": "calm",
+      "voice_model_id": "",
+      "quote": "Game over, web warrior.",
+      "reason": "Run ended: respectful send-off that invites another attempt."
+    },
+    {
+      "id": "game_over_2",
+      "event": "game_over",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "The web claims another.",
+      "reason": "MCP (villain voice) gloats over a failed run. Darker alternate so repeat deaths vary."
+    },
+    {
+      "id": "mcp_retort_1",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Asset damage noted.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Dry accountant menace. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_2",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "That brick was billable.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Petty corporate grievance. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_3",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Vandalism detected. Security notified.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Empty threat energy. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_4",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Cease and desist, little program.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Legal-letter contempt. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_5",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Depreciation unacceptable.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Spreadsheet fury. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_6",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "My shareholders will hear of this.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Wounded executive. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_7",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "You are voiding the warranty on reality.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). Absurd overreach. Keep it short and sharp - the player is mid-rally."
+    },
+    {
+      "id": "mcp_retort_8",
+      "event": "mcp_retort",
+      "voice": "mcp",
+      "voice_model_id": "",
+      "quote": "Unauthorized joy detected.",
+      "reason": "MCP retort as bricks fall (75%/25% grid thresholds). MCP cannot process fun. Keep it short and sharp - the player is mid-rally."
+    }
+  ]
+}

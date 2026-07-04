@@ -481,8 +481,8 @@
       "event": "life_lost",
       "voice": "calm",
       "voice_model_id": "",
-      "quote": "Ouch. Regroup!",
-      "reason": "Ball lost with lives remaining: brief sympathy, then an immediate rally."
+      "quote": "Reenergizing for the people.",
+      "reason": "Ball lost with lives remaining: an energy-generation cue and a collective rallying line."
     },
     {
       "id": "game_over_1",

@@ -746,7 +746,7 @@ class Game(
                 }
             }
             PowerUpType.ZAP -> {
-                zapRandomBricks(15)
+                lives = (lives + 1).coerceAtMost(MAX_LIVES)
                 audio.sfx("superzap")
             }
             PowerUpType.LIFE -> lives = (lives + 1).coerceAtMost(MAX_LIVES)

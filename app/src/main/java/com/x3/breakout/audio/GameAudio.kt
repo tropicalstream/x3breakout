@@ -88,8 +88,9 @@ class GameAudio(private val ctx: Context, private val settings: Settings) {
 
     private fun cacheAsset(path: String): File {
         val out = File(ctx.cacheDir, path.replace('/', '_'))
-        if (!out.exists() || out.length() == 0L) {
-            ctx.assets.open(path).use { input ->
+        ctx.assets.open(path).use { input ->
+            val assetSize = input.available().toLong()
+            if (!out.exists() || out.length() != assetSize) {
                 out.outputStream().use { input.copyTo(it) }
             }
         }

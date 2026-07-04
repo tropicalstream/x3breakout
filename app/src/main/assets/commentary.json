@@ -455,10 +455,10 @@
     {
       "id": "superzapper_1",
       "event": "superzapper",
-      "voice": "warning",
+      "voice": "hype",
       "voice_model_id": "",
-      "quote": "Superzapper recharge!",
-      "reason": "ZAP collected: signature arcade callback that should punch through the noise."
+      "quote": "Energy routed back to the people. One life restored.",
+      "reason": "Z power-up collected: it no longer clears bricks; it reenergizes the player with an extra life."
     },
     {
       "id": "extra_life_1",

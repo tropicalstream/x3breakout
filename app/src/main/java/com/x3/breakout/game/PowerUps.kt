@@ -17,7 +17,7 @@ enum class PowerUpType(
     SLOW('S', "SLOW", 12f, 15, "powerup_slow", floatArrayOf(0.1f, 0.95f, 1f)),
     CATCH('C', "CATCH", 15f, 12, "powerup_catch", floatArrayOf(1f, 0.9f, 0.1f)),
     MULTI('M', "MULTI", 0f, 15, "powerup_multi", floatArrayOf(0.9f, 0.2f, 1f)),
-    ZAP('Z', "SUPERZAPPER", 0f, 9, "superzapper", floatArrayOf(1f, 1f, 1f)),
+    ZAP('Z', "REENERGIZE", 0f, 9, "superzapper", floatArrayOf(1f, 1f, 1f)),
     LIFE('1', "1UP", 0f, 4, "extra_life", floatArrayOf(0.25f, 0.35f, 1f));
 
     val timed get() = duration > 0f

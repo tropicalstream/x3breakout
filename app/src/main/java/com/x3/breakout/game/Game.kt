@@ -867,6 +867,7 @@ class Game(
         audio.sfx("lose_life")
         if (lives <= 0) {
             state = State.GAME_OVER; stateTimer = 0f
+            settings.highScore = score
             audio.stopLevelMusic()
             audio.say("game_over", force = true)
         } else {
@@ -934,6 +935,9 @@ class Game(
             VectorFont.draw(batch, "TAP TO START", 0f, -0.044f, 0.0018f, 1f, 1f, 1f, 0.9f, centered = true)
         }
         VectorFont.draw(batch, "DOUBLE TAP: SETTINGS", 0f, -0.060f, 0.0012f, 0.4f, 0.75f, 1f, 0.7f, centered = true)
+        // Same gold as the in-game SCORE HUD — "gold means score" everywhere.
+        VectorFont.draw(batch, "HIGH SCORE " + settings.highScore.toString().padStart(6, '0'),
+            0f, -0.075f, 0.0013f, 1f, 0.9f, 0.1f, 0.85f, centered = true)
     }
 
     private fun renderPlay() {

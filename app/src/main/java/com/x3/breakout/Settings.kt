@@ -46,4 +46,9 @@ class Settings(ctx: Context) {
     var sfxVol: Int
         get() = prefs.getInt("sfxVol", 8)
         set(v) { prefs.edit().putInt("sfxVol", v.coerceIn(0, 10)).apply() }
+
+    /** Best score across all runs on this device. Only ever ratchets up. */
+    var highScore: Int
+        get() = prefs.getInt("highScore", 0)
+        set(v) { if (v > highScore) prefs.edit().putInt("highScore", v).apply() }
 }

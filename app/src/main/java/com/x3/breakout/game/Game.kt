@@ -629,16 +629,37 @@ class Game(
         batch.lift = 0f
     }
 
+    /** Minimum vertical velocity fraction: sin(~20°). Below this the ball
+     *  is basically horizontal and just ping-pongs between the sidewalls. */
+    private val MIN_VY_FRAC = 0.34f
+
+    /**
+     * Anti-ping-pong: after a wall or brick bounce, if the trajectory is
+     * flatter than ~20° off horizontal, steepen it to that minimum while
+     * preserving speed. Keeps the current vertical direction; a dead-flat
+     * ball is nudged downward, back toward the paddle.
+     */
+    private fun steepen(b: Ball) {
+        val sp = sqrt(b.vx * b.vx + b.vy * b.vy)
+        if (sp < 1e-6f) return
+        val minVy = sp * MIN_VY_FRAC
+        if (abs(b.vy) >= minVy) return
+        val sy = if (b.vy > 0f) 1f else -1f
+        b.vy = sy * minVy
+        val vx2 = (sp * sp - minVy * minVy).coerceAtLeast(0f)
+        b.vx = (if (b.vx >= 0f) 1f else -1f) * sqrt(vx2)
+    }
+
     /** Ball vs walls, paddle, bricks. Returns true if something was hit. */
     private fun collide(b: Ball): Boolean {
         var hit = false
         // walls — every bounce sheds rainbow sparks
         if (b.x < -HW + BALL_R) {
-            b.x = -HW + BALL_R; b.vx = abs(b.vx); audio.sfx("wall"); hit = true
+            b.x = -HW + BALL_R; b.vx = abs(b.vx); steepen(b); audio.sfx("wall"); hit = true
             sparks(b.x, b.y, Levels.palette[3], 3, 0.05f, rainbow = true)
         }
         if (b.x > HW - BALL_R) {
-            b.x = HW - BALL_R; b.vx = -abs(b.vx); audio.sfx("wall"); hit = true
+            b.x = HW - BALL_R; b.vx = -abs(b.vx); steepen(b); audio.sfx("wall"); hit = true
             sparks(b.x, b.y, Levels.palette[3], 3, 0.05f, rainbow = true)
         }
         if (b.y > HH - BALL_R) {
@@ -673,7 +694,7 @@ class Game(
             if (!br.alive) continue
             val n = ballBrickNormal(b, br) ?: continue
             val dot = b.vx * n[0] + b.vy * n[1]
-            if (dot < 0f) { b.vx -= 2 * dot * n[0]; b.vy -= 2 * dot * n[1] }
+            if (dot < 0f) { b.vx -= 2 * dot * n[0]; b.vy -= 2 * dot * n[1]; steepen(b) }
             hitBrick(br)
             hit = true
             break

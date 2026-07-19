@@ -11,8 +11,8 @@ android {
         applicationId = "com.x3.breakout"
         minSdk = 29
         targetSdk = 35
-        versionCode = 3
-        versionName = "2.1"
+        versionCode = 4
+        versionName = "2.2"
     }
 
     // Field guide §2/§11: never recompress audio or the MediaPipe model,

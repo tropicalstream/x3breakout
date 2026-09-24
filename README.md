@@ -9,6 +9,10 @@ X3 Breakout is a story-driven brick-breaker for the RayNeo X3 Pro AR glasses, pa
   <img src="images/gameplay.png" width="45%" alt="X3 Breakout web-shaped brick layout in perspective">
 </p>
 
+## Demo
+
+[![X3Breakout](https://i.ytimg.com/vi/kyB-zYtDP9w/hqdefault.jpg)](https://youtu.be/kyB-zYtDP9w)
+
 ## Controls
 
 - Swipe on the right temple pad to move the paddle (calibrated to your own full arm stroke)

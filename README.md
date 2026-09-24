@@ -1,14 +1,6 @@
 # X3 Breakout
 
-Free software, licensed under the GNU GPL v3 (see LICENSE).
-
-
-You pilot THE PADDLE — a living open-source defense program: deflector,
-shield, public firewall, labor-memory archive. Every ball is an open
-signal bounced back into the privatized grid. The enemy is the MONOPOLY
-CONTROL PROTOCOL (MCP), a corporate extraction intelligence wearing the
-webs as its body: it wants to privatize open-source AI, paywall public
-knowledge, and charge humanity rent on its own collective labor.
+X3 Breakout is a story-driven brick-breaker for the RayNeo X3 Pro AR glasses, pairing Arkanoid-style paddle-and-ball play with Tempest-style neon vector visuals. Across a sixteen-level campaign, you pilot a paddle framed as an open-source defense program against a corporate antagonist called the Monopoly Control Protocol, with each level's brick grid rendered as a distinct vector sigil that cracks and glitches as it falls. The campaign is fully voiced, with generated dialogue and taunts timed to level milestones and rendered as large, high-contrast captions. Paddle control uses a calibrated temple-pad swipe rather than a fixed mapping, so a full arm stroke is measured once and then scaled to the player's own reach.
 
 ## Screenshots
 
@@ -17,17 +9,13 @@ knowledge, and charge humanity rent on its own collective labor.
   <img src="images/gameplay.png" width="45%" alt="X3 Breakout web-shaped brick layout in perspective">
 </p>
 
+## Controls
 
-## License
+- Swipe on the right temple pad to move the paddle (calibrated to your own full arm stroke)
+- Tap to start the game or launch the ball
+- Swipe in short steps to move the cursor in the settings menu
+- Double-tap to open or close settings
 
-X3 Breakout — a story-driven neon breakout for RayNeo X3 Pro glasses.
+## Download
 
-This program is free software: you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your
-option) any later version. See the LICENSE file for the full text.
-
-This program is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
+[X3Breakout.apk](X3Breakout.apk)

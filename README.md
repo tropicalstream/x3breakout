@@ -10,6 +10,13 @@ CONTROL PROTOCOL (MCP), a corporate extraction intelligence wearing the
 webs as its body: it wants to privatize open-source AI, paywall public
 knowledge, and charge humanity rent on its own collective labor.
 
+## Screenshots
+
+<p>
+  <img src="images/title.png" width="45%" alt="X3 Breakout title screen">
+  <img src="images/gameplay.png" width="45%" alt="X3 Breakout web-shaped brick layout in perspective">
+</p>
+
 
 ## License
 
